@@ -1,8 +1,11 @@
 import React from 'react'
+import { MdDarkMode } from "react-icons/md";
 
 const ThemeComp = () => {
   return (
-    <div>ThemeComp</div>
+    <div>
+        <MdDarkMode className='cursor-pointer' size={25}/>
+    </div>
   )
 }
 
