@@ -5,5 +5,4 @@ const Head = () => {
   <title>MovieApp</title>
   )
 }
-
 export default Head
