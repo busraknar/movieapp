@@ -1,7 +1,13 @@
+"use client"
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import React from 'react'
 
 const Tabs = () => {
+  const searchParams= useSearchParams()
+  const genre= searchParams.get('genre')
+  console.log(genre, "genre")
+
     const tabs= [
         {
             name :"En Popüler",
@@ -21,7 +27,8 @@ const Tabs = () => {
       {
         tabs.map((tab,i)=>
         (
-          <Link className='cursor-pointer hover:opacity-75 transition-opacity' href={`/?genre=${tab.url}`}> {tab.name}</Link>
+          <Link className={`cursor-pointer hover:opacity-75 transition-opacity ${tab.url=== genre ? "underline underline-offset-8 text-amber-600" : ""}`} 
+          href={`/?genre=${tab.url}`}> {tab.name}</Link>
         ))
        
       }
